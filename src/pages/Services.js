@@ -5,10 +5,34 @@ import { Link } from 'react-router-dom';
 import { fadeIn, staggerContainer } from '../utils/animations';
 
 const ServicesHero = styled.section`
-  background: linear-gradient(135deg, ${props => props.theme.colors.primary} 0%, ${props => props.theme.colors.secondary} 100%);
+  position: relative;
   color: ${props => props.theme.colors.white};
   padding: 120px 0 80px;
   text-align: center;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/images/services-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 86, 179, 0.85) 0%, rgba(0, 160, 220, 0.85) 100%);
+    z-index: -1;
+  }
 `;
 
 const ServicesHeroTitle = styled.h1`

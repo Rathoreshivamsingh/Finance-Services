@@ -12,7 +12,6 @@ const HeroSection = styled.section`
   align-items: center;
   position: relative;
   padding: 0;
-  background: linear-gradient(135deg, rgba(0, 86, 179, 0.9) 0%, rgba(0, 160, 220, 0.8) 100%);
   overflow: hidden;
   
   &:before {
@@ -26,7 +25,17 @@ const HeroSection = styled.section`
     background-size: cover;
     background-position: center;
     z-index: -1;
-    opacity: 0.2;
+  }
+  
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 86, 179, 0.7) 0%, rgba(0, 160, 220, 0.6) 100%);
+    z-index: -1;
   }
 `;
 

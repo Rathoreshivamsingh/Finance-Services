@@ -6,10 +6,35 @@ import Button from '../common/Button';
 import { fadeIn, slideInUp } from '../../utils/animations';
 
 const CTASection = styled.section`
-  background: linear-gradient(135deg, ${props => props.theme.colors.primary} 0%, ${props => props.theme.colors.secondary} 100%);
+  position: relative;
   color: ${props => props.theme.colors.white};
   position: relative;
   overflow: hidden;
+  padding: 80px 0;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/images/cta-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 86, 179, 0.85) 0%, rgba(0, 160, 220, 0.85) 100%);
+    z-index: -1;
+  }
 `;
 
 const CTAContent = styled.div`
